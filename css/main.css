@@ -50,7 +50,6 @@ main {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  overflow: hidden;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -212,7 +211,58 @@ main {
 }
 
 @media (min-width: 767px) {
+  .card {
+    display: flex;
+    width: 600px;
+  }
+  .card .img_holder {
+    width: 50%;
+  }
+  .card .img_holder img {
+    width: 100%;
+    height: 100%;
+  }
+  .card .content {
+    width: 50%;
+  }
   .card .content .share_holder {
     position: relative;
+  }
+  .card .content .share_holder .links {
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 3;
+    width: fit-content;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 1rem;
+    height: fit-content;
+  }
+  .card .content .share_holder .links::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -18px;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--dark-gray-blue) transparent transparent transparent;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  .card .content .share_holder .links .box:last-child {
+    margin: 0;
   }
 }
